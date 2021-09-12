@@ -97,7 +97,7 @@ end
 file:write(serialized)    file:close()  
 end
 local create_config_auto = function()
-new_file = io.open("./ER.txt", "w")  
+new_file = io.open("./AR.txt", "w")  
 new_file:write(token)  
 new_file:close()
 config = {
@@ -109,8 +109,8 @@ sudo_users = {SUDO},
 create(config, "./config.lua")   
 faederdx1:set(botid..":BotUser:","@"..botusername)
 faederdx1:set(botid..":DataCenter",Getuser.results.DataCenter)
-local RUNER = io.open("RUNER.sh", 'w')
-RUNER:write([[
+local RUNAR = io.open("RUNAR.sh", 'w')
+RUNAR:write([[
 #!/usr/bin/env bash
 cd $(cd $(dirname $0); pwd)
 token="]]..token..[["
@@ -119,15 +119,15 @@ rm -fr ../.telegram-cli
 ./tg -s ./EORO.lua -p PROFILE --bot=$token
 done
 ]])
-RUNER:close()
-local Run_ = io.open("ER", 'w')
+RUNAR:close()
+local Run_ = io.open("AR", 'w')
 Run_:write([[
 #!/usr/bin/env bash
 cd $(cd $(dirname $0); pwd)
 while(true) do
 rm -fr ../.telegram-cli
 screen -S ]]..faederdx1:get(botid..":BotUser:")..[[ -X kill
-screen -S ]]..faederdx1:get(botid..":BotUser:")..[[ ./RUNER.sh
+screen -S ]]..faederdx1:get(botid..":BotUser:")..[[ ./RUNAR.sh
 done
 ]])
 Run_:close()
@@ -135,7 +135,7 @@ os.execute([[
 rm -f ./README.md
 rm -rf ./.git
 chmod +x ./ER
-chmod +x ./RUNER.sh
+chmod +x ./RUNAR.sh
 ./ER
 ]])
 end 
@@ -152,7 +152,7 @@ file:write(serialized)
 file:close() 
 end end
 local load_faederdx1 = function()  
-local f = io.open("./ER.txt", "r")  
+local f = io.open("./AR.txt", "r")  
 local c = io.open("./config.lua", "r")  
 if not f or not c then   AutoSet()  
 else   
@@ -164,7 +164,7 @@ return config
 end  
 _faederdx1 = load_faederdx1()  
 sudos = dofile("./config.lua") 
-Token = io.open("./ER.txt","r")
+Token = io.open("./AR.txt","r")
 bot_owner = sudos.SUDO 
 sudo_users = {sudos.sudo_users} 
 bot_id = sudos.bot_id 
