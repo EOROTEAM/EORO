@@ -97,7 +97,7 @@ end
 file:write(serialized)    file:close()  
 end
 local create_config_auto = function()
-new_file = io.open("./FA.txt", "w")  
+new_file = io.open("./ER.txt", "w")  
 new_file:write(token)  
 new_file:close()
 config = {
@@ -109,34 +109,34 @@ sudo_users = {SUDO},
 create(config, "./config.lua")   
 faederdx1:set(botid..":BotUser:","@"..botusername)
 faederdx1:set(botid..":DataCenter",Getuser.results.DataCenter)
-local RUNFA = io.open("RUNFA.sh", 'w')
-RUNFA:write([[
+local RUNER = io.open("RUNER.sh", 'w')
+RUNER:write([[
 #!/usr/bin/env bash
 cd $(cd $(dirname $0); pwd)
 token="]]..token..[["
 while(true) do
 rm -fr ../.telegram-cli
-./tg -s ./FAEDER.lua -p PROFILE --bot=$token
+./tg -s ./EORO.lua -p PROFILE --bot=$token
 done
 ]])
-RUNFA:close()
-local Run_ = io.open("FA", 'w')
+RUNER:close()
+local Run_ = io.open("ER", 'w')
 Run_:write([[
 #!/usr/bin/env bash
 cd $(cd $(dirname $0); pwd)
 while(true) do
 rm -fr ../.telegram-cli
 screen -S ]]..faederdx1:get(botid..":BotUser:")..[[ -X kill
-screen -S ]]..faederdx1:get(botid..":BotUser:")..[[ ./RUNFA.sh
+screen -S ]]..faederdx1:get(botid..":BotUser:")..[[ ./RUNER.sh
 done
 ]])
 Run_:close()
 os.execute([[
 rm -f ./README.md
 rm -rf ./.git
-chmod +x ./FA
-chmod +x ./RUNFA.sh
-./FA
+chmod +x ./ER
+chmod +x ./RUNER.sh
+./ER
 ]])
 end 
 create_config_auto()
@@ -152,7 +152,7 @@ file:write(serialized)
 file:close() 
 end end
 local load_faederdx1 = function()  
-local f = io.open("./FA.txt", "r")  
+local f = io.open("./ER.txt", "r")  
 local c = io.open("./config.lua", "r")  
 if not f or not c then   AutoSet()  
 else   
@@ -164,7 +164,7 @@ return config
 end  
 _faederdx1 = load_faederdx1()  
 sudos = dofile("./config.lua") 
-Token = io.open("./FA.txt","r")
+Token = io.open("./ER.txt","r")
 bot_owner = sudos.SUDO 
 sudo_users = {sudos.sudo_users} 
 bot_id = sudos.bot_id 
@@ -8892,7 +8892,7 @@ if not is_leader(msg) then
 faederdx(msg.chat_id_, msg.id_, 1, '⌯︙للمطور الاساسي فقط ', 1, 'md')
 else
 if not faederdx1:get(FAEDER..'lock:add'..msg.chat_id_) then
-sendDocument(bot_owner, 0, 0, 1, nil, './FAEDER.lua', dl_cb, nil)
+sendDocument(bot_owner, 0, 0, 1, nil, './EORO.lua', dl_cb, nil)
 faederdx(msg.chat_id_, msg.id_, 1, '⌯︙تم ارسال نسخه الملف الى خاصك مع البوت ', 1, 'md')
 end end end
 --     By Developer Faeder     -- 
@@ -9868,10 +9868,10 @@ end
 --     By Developer Faeder     -- 
 if text == "تحديث السورس" and is_leader(msg) then 
 faederdx(msg.chat_id_, msg.id_, 1, '⌯︙جاري تحديث السورس الى الاصدار الجديد ', 1, 'md') 
-os.execute('rm -rf FAEDER.lua') 
-os.execute('wget https://raw.githubusercontent.com/TEAMFAEDER/FAEDER/master/FAEDER.lua') 
+os.execute('rm -rf EORO.lua') 
+os.execute('wget https://raw.githubusercontent.com/EOROTEAM/EORO/main/EORO.lua') 
 faederdx(msg.chat_id_, msg.id_, 1, '⌯︙تم تحديث السورس اكتشف المميزات الجديده الان ', 1, 'md') 
-dofile('FAEDER.lua')
+dofile('EORO.lua')
 io.popen("rm -rf ~/.telegram-cli/data/audio/*")
 io.popen("rm -rf ~/.telegram-cli/data/document/*")
 io.popen("rm -rf ~/.telegram-cli/data/photo/*")
@@ -9884,7 +9884,7 @@ io.popen("rm -rf ~/.telegram-cli/data/profile_photo/*")
 end
 --     By Developer Faeder     -- 
 if text == 'تحديث' and is_leader(msg) then  
-dofile('FAEDER.lua')  io.popen("rm -rf ~/.telegram-cli/data/audio/*") 
+dofile('EORO.lua')  io.popen("rm -rf ~/.telegram-cli/data/audio/*") 
 io.popen("rm -rf ~/.telegram-cli/data/document/*") 
 io.popen("rm -rf ~/.telegram-cli/data/photo/*") 
 io.popen("rm -rf ~/.telegram-cli/data/sticker/*") 
