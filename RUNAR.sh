@@ -68,8 +68,8 @@ echo -e "\e[38;5;77m       •{ Source developer : @KKKKF }•\e[0m"
 cd ..
 rm -rf luarocks*
 cd && cd $THIS_DIR
-chmod +x ./AR
-sudo sh AR
+chmod +x ./EO
+sudo sh EO
 }
 if [ "$1" = "install" ]; then
 install
@@ -79,6 +79,6 @@ echo "Tg Is Not Found"
 exit 1
 fi
 cd && cd $THIS_DIR
-chmod +x ./AR
-sudo sh AR
+chmod +x ./EO
+sudo sh EO
 fi
