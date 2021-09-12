@@ -168,12 +168,12 @@ Token = io.open("./AR.txt","r")
 bot_owner = sudos.SUDO 
 sudo_users = {sudos.sudo_users} 
 bot_id = sudos.bot_id 
-FAEDER = sudos.bot_id
+EORO = sudos.bot_id
 SUDOUSERNAME = sudos.username
 tokenbot = Token:read('*a')
 name_bot = (faederdx1:get(EORO..'name_bot') or 'فايدر')
-SudoFaeder = SUDOUSERNAME:gsub('@','') 
-SudoFaeder = SudoFaeder:gsub([[\_]],'_')
+SudoEORO = SUDOUSERNAME:gsub('@','') 
+SudoEORO = SudoFaeder:gsub([[\_]],'_')
 ----------------------------------------------------------
 -- Start Functions Source EORO --
 --     By Developer EORO     -- 
