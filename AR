@@ -17,16 +17,16 @@ fi
 
 chmod +x ./tg
 
-if [ "$1" == "F" ]; then
+if [ "$1" == "A" ]; then
 while(true) do
 sudo rm -fr ~/.telegram-cli
 ./tg -s ./EORO.lua $@ --bot=$Token
 done
 else
 if ! screen -list | grep -q "$BotUser"; then
-screen -S $BotUser ./AR F
+screen -S $BotUser ./AR A
 else
 screen -X -S $BotUser quit
-screen -S $BotUser ./AR F
+screen -S $BotUser ./AR A
 fi
 fi
