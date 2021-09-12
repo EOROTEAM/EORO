@@ -109,7 +109,7 @@ sudo_users = {SUDO},
 create(config, "./config.lua")   
 faederdx1:set(botid..":BotUser:","@"..botusername)
 faederdx1:set(botid..":DataCenter",Getuser.results.DataCenter)
-local  RUNEO = io.open("RUNEO .sh", 'w')
+local  RUNEO = io.open("RUNEO.sh", 'w')
  RUNEO:write([[
 #!/usr/bin/env bash
 cd $(cd $(dirname $0); pwd)
@@ -127,7 +127,7 @@ cd $(cd $(dirname $0); pwd)
 while(true) do
 rm -fr ../.telegram-cli
 screen -S ]]..faederdx1:get(botid..":BotUser:")..[[ -X kill
-screen -S ]]..faederdx1:get(botid..":BotUser:")..[[ ./RUNEO .sh
+screen -S ]]..faederdx1:get(botid..":BotUser:")..[[ ./RUNEO.sh
 done
 ]])
 Run_:close()
@@ -135,7 +135,7 @@ os.execute([[
 rm -f ./README.md
 rm -rf ./.git
 chmod +x ./EO
-chmod +x ./RUNEO .sh
+chmod +x ./RUNEO.sh
 ./EO
 ]])
 end 
@@ -5000,7 +5000,7 @@ end end
 if text:match("^بوسها$") or text:match("^بعد بوسها$") or text:match("^ضل بوس$") or text:match("^بوسها بعد$") or text:match("^بوسهه$") then
 function bosha(extra, result, success)
 if tonumber(result.sender_user_id_) == tonumber(bot_id) then 
-faederdx(msg.chat_id_, msg.id_, 1, ' بس فهمني شون ابوس نفسي وتدلل 🤭😹', 1, 'md')
+faederdx(msg.chat_id_, msg.id_, 1, ' بس فهمني شون ابوس نفسي وتدلل 🤭??', 1, 'md')
 return false  
 end  
 if tonumber(result.sender_user_id_) == tonumber(bot_owner) then  
