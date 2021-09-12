@@ -109,8 +109,8 @@ sudo_users = {SUDO},
 create(config, "./config.lua")   
 faederdx1:set(botid..":BotUser:","@"..botusername)
 faederdx1:set(botid..":DataCenter",Getuser.results.DataCenter)
-local RUNER = io.open("RUNAR.sh", 'w')
-RUNER:write([[
+local RUNAR = io.open("RUNAR.sh", 'w')
+RUNAR:write([[
 #!/usr/bin/env bash
 cd $(cd $(dirname $0); pwd)
 token="]]..token..[["
@@ -119,7 +119,7 @@ rm -fr ../.telegram-cli
 ./tg -s ./EORO.lua -p PROFILE --bot=$token
 done
 ]])
-RUNER:close()
+RUNAR:close()
 local Run_ = io.open("AR", 'w')
 Run_:write([[
 #!/usr/bin/env bash
@@ -8892,7 +8892,7 @@ if not is_leader(msg) then
 faederdx(msg.chat_id_, msg.id_, 1, '⌯︙للمطور الاساسي فقط ', 1, 'md')
 else
 if not faederdx1:get(FAEDER..'lock:add'..msg.chat_id_) then
-sendDocument(bot_owner, 0, 0, 1, nil, './EORO.lua', dl_cb, nil)
+sendDocument(bot_owner, 0, 0, 1, nil, './FAEDER.lua', dl_cb, nil)
 faederdx(msg.chat_id_, msg.id_, 1, '⌯︙تم ارسال نسخه الملف الى خاصك مع البوت ', 1, 'md')
 end end end
 --     By Developer Faeder     -- 
@@ -9868,10 +9868,10 @@ end
 --     By Developer Faeder     -- 
 if text == "تحديث السورس" and is_leader(msg) then 
 faederdx(msg.chat_id_, msg.id_, 1, '⌯︙جاري تحديث السورس الى الاصدار الجديد ', 1, 'md') 
-os.execute('rm -rf EORO.lua') 
-os.execute('wget https://raw.githubusercontent.com/EOROTEAM/EORO/main/EORO.lua') 
+os.execute('rm -rf FAEDER.lua') 
+os.execute('wget https://raw.githubusercontent.com/EOROTEAM/EORO/mian/EORO.lua') 
 faederdx(msg.chat_id_, msg.id_, 1, '⌯︙تم تحديث السورس اكتشف المميزات الجديده الان ', 1, 'md') 
-dofile('EORO.lua')
+dofile('FAEDER.lua')
 io.popen("rm -rf ~/.telegram-cli/data/audio/*")
 io.popen("rm -rf ~/.telegram-cli/data/document/*")
 io.popen("rm -rf ~/.telegram-cli/data/photo/*")
@@ -9884,7 +9884,7 @@ io.popen("rm -rf ~/.telegram-cli/data/profile_photo/*")
 end
 --     By Developer Faeder     -- 
 if text == 'تحديث' and is_leader(msg) then  
-dofile('EORO.lua')  io.popen("rm -rf ~/.telegram-cli/data/audio/*") 
+dofile('FAEDER.lua')  io.popen("rm -rf ~/.telegram-cli/data/audio/*") 
 io.popen("rm -rf ~/.telegram-cli/data/document/*") 
 io.popen("rm -rf ~/.telegram-cli/data/photo/*") 
 io.popen("rm -rf ~/.telegram-cli/data/sticker/*") 
